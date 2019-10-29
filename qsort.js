@@ -1,4 +1,5 @@
 const { expect } = require('./assert')
+const { isSorted } = require('./isSorted')
 
 function qsort(arr) {
   if (arr.length < 2) return arr
@@ -17,16 +18,6 @@ function qsort(arr) {
   }
 
   return [...qsort(smallerElements), baseElement, ...qsort(greaterElements)]
-}
-
-function isSorted(arr) {
-  if (arr.length < 2) return true
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < arr[i - 1]) return false
-  }
-
-  return true
 }
 
 const TEST_CASES = [
