@@ -35,3 +35,5 @@ const TEST_CASES = [
 for (let testCase of TEST_CASES) {
   expect(isSorted(qsort(testCase))).toBe(true)
 }
+
+module.exports = { qsort }
