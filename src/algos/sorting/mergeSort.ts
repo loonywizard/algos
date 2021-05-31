@@ -36,7 +36,6 @@ const TEST_CASES = [
 
 for (let testCase of TEST_CASES) {
   const sortedArray = mergeSort(testCase)
-  console.log(sortedArray)
 
   expect(isSorted(sortedArray)).toBe(true)
   expect(haveSameLength(sortedArray, testCase)).toBe(true)

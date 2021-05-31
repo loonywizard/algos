@@ -1,11 +1,6 @@
 import { haveSameLength, isSorted, expect }  from '../../validators'
-
-
-function swap(arr: number[], firstElementIndex: number, secondElementIndex: number): void {
-  const t = arr[firstElementIndex]
-  arr[firstElementIndex] = arr[secondElementIndex]
-  arr[secondElementIndex] = t
-}
+import { generateRandomArray } from '../../utils/generateRandomArray'
+import { swap } from '../../utils/swap'
 
 
 function partition(arr: number[], start: number, end: number): number {
@@ -35,17 +30,11 @@ function qsort(arr: number[], start = 0, end = arr.length - 1) {
 }
 
 
-// TODO: use generateRandomArray
 const TEST_CASES = [
-  [],
-  [-10],
-  [7],
-  [3, 3],
-  [3, 3, 3, 3],
-  [3, 3, 3, 3, 3],
-  [100, 1, 2, 50, 20, 12, -32, -9, 19],
-  [1, 2, 3, 4, 5],
-  [8, 9, 8, 8, 9, 9],
+  generateRandomArray(0, 0, 0),
+  generateRandomArray(1, 1, 5),
+  generateRandomArray(1000, -1000, 1000),
+  generateRandomArray(1001, -1001, 1001),
 ]
 
 for (let testCase of TEST_CASES) {
