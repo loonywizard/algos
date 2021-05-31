@@ -1,6 +1,6 @@
-import { expect }  from './utils/assert'
-import { isSorted }  from './validators/isSorted'
-import { haveSameLength }  from './validators/haveSameLength'
+import { expect }  from '../../utils/assert'
+import { isSorted }  from '../../validators/isSorted'
+import { haveSameLength }  from '../../validators/haveSameLength'
 
 function qsort(arr: number[]): number[] {
   if (arr.length < 2) return arr

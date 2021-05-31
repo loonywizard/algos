@@ -1,4 +1,4 @@
-const { isSorted } = require('./validators/isSorted')
+const { isSorted } = require('../validators/isSorted')
 
 function removeDuplicates(arr) {
   if (!isSorted(arr)) throw new Error('removeDuplicates accepts only sorted array')
