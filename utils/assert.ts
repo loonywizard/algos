@@ -1,5 +1,5 @@
-function expect(actualValue) {
-  function toBe(expectedValue) {
+function expect<T>(actualValue: T) {
+  function toBe(expectedValue: T) {
     if (actualValue !== expectedValue) {
       throw new Error(`Expected ${expectedValue}, got: ${actualValue}`)
     }
@@ -8,4 +8,4 @@ function expect(actualValue) {
   return { toBe }
 }
 
-module.exports = { expect }
+export { expect }

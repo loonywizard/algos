@@ -1,0 +1,12 @@
+{
+  "include": ["*/*"],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  }
+}

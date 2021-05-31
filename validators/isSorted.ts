@@ -1,4 +1,4 @@
-function isSorted(arr) {
+function isSorted<T>(arr: T[]): boolean {
   if (arr.length < 2) return true
 
   for (let i = 1; i < arr.length; i++) {
@@ -8,4 +8,4 @@ function isSorted(arr) {
   return true
 }
 
-module.exports = { isSorted }
+export { isSorted }
