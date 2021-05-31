@@ -1,6 +1,6 @@
 const { expect } = require('./utils/assert')
-const { isSorted } = require('./utils/isSorted')
-const { haveSameLength } = require('./utils/haveSameLength')
+const { isSorted } = require('./validators/isSorted')
+const { haveSameLength } = require('./validators/haveSameLength')
 
 function qsort(arr) {
   if (arr.length < 2) return arr
