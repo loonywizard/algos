@@ -2,24 +2,40 @@ import { expect }  from '../../utils/assert'
 import { isSorted }  from '../../validators/isSorted'
 import { haveSameLength }  from '../../validators/haveSameLength'
 
-function qsort(arr: number[]): number[] {
-  if (arr.length < 2) return arr
 
-  const baseElementIndex = 0
-  const baseElement = arr[baseElementIndex]
-  
-  const smallerElements = []
-  const sameElements = []
-  const greaterElements = []
+function swap(arr: number[], firstElementIndex: number, secondElementIndex: number): void {
+  const t = arr[firstElementIndex]
+  arr[firstElementIndex] = arr[secondElementIndex]
+  arr[secondElementIndex] = t
+}
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === baseElement) sameElements.push(baseElement)
-    else if (arr[i] < baseElement) smallerElements.push(arr[i])
-    else greaterElements.push(arr[i])
+
+function partition(arr: number[], start: number, end: number): number {
+  const pivotIndex = start
+  const pivotElement = arr[pivotIndex]
+
+  while (start < end) {
+    while (start < arr.length && arr[start] <= pivotElement) start++
+    while (arr[end] > pivotElement) end--
+
+    if (start < end) swap(arr, start, end)
   }
 
-  return [...qsort(smallerElements), ...sameElements, ...qsort(greaterElements)]
+  swap(arr, pivotIndex, end)
+
+  return end
 }
+
+
+function qsort(arr: number[], start = 0, end = arr.length - 1) {
+  if (start >= end) return
+
+  const p = partition(arr, start, end)
+
+  qsort(arr, start, p - 1)
+  qsort(arr, p + 1, end)
+}
+
 
 const TEST_CASES = [
   [],
@@ -34,10 +50,12 @@ const TEST_CASES = [
 ]
 
 for (let testCase of TEST_CASES) {
-  const sortedArray = qsort(testCase)
+  const copyOfTestCase = [...testCase]
 
-  expect(isSorted(sortedArray)).toBe(true)
-  expect(haveSameLength(sortedArray, testCase)).toBe(true)
+  qsort(copyOfTestCase)
+
+  expect(isSorted(copyOfTestCase)).toBe(true)
+  expect(haveSameLength(copyOfTestCase, testCase)).toBe(true)
 }
 
-module.exports = { qsort }
+export { qsort }
