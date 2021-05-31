@@ -1,4 +1,4 @@
-const { expect } = require('../utils/assert')
+const { expect } = require('../validators/assert')
 
 function binarySearch(list, number) {
   let head = 0

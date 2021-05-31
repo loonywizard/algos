@@ -1,6 +1,4 @@
-import { expect }  from '../../utils/assert'
-import { isSorted }  from '../../validators/isSorted'
-import { haveSameLength }  from '../../validators/haveSameLength'
+import { haveSameLength, isSorted, expect }  from '../../validators'
 
 
 function swap(arr: number[], firstElementIndex: number, secondElementIndex: number): void {
@@ -37,6 +35,7 @@ function qsort(arr: number[], start = 0, end = arr.length - 1) {
 }
 
 
+// TODO: use generateRandomArray
 const TEST_CASES = [
   [],
   [-10],
