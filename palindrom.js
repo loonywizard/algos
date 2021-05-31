@@ -1,4 +1,4 @@
-const { expect } = require('./assert')
+const { expect } = require('./utils/assert')
 
 function normalizeString(str) {
   return str.toLowerCase().replace(/[ -.,!?]/g, '')

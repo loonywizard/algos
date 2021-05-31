@@ -1,4 +1,4 @@
-const { expect } = require('./assert')
+const { expect } = require('./utils/assert')
 const { qsort } = require('./qsort')
 const { removeDuplicates } = require('./removeDuplicates')
 const { compose } = require('./compose')

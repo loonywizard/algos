@@ -1,4 +1,4 @@
-const { expect } = require('./assert')
+const { expect } = require('./utils/assert')
 
 function binarySearch(list, number, head = 0, tail = list.length - 1) {
   const guessedIndex = Math.floor((head + tail) / 2)

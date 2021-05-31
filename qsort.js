@@ -1,5 +1,5 @@
-const { expect } = require('./assert')
-const { isSorted } = require('./isSorted')
+const { expect } = require('./utils/assert')
+const { isSorted } = require('./utils/isSorted')
 
 function qsort(arr) {
   if (arr.length < 2) return arr
