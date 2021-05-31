@@ -1,6 +1,7 @@
 const { isSorted } = require('../validators/isSorted')
 
 function removeDuplicates(arr) {
+  // TODO: refactor this to work with un-sorted array using HashMap
   if (!isSorted(arr)) throw new Error('removeDuplicates accepts only sorted array')
 
   if (arr.length <= 1) return arr
