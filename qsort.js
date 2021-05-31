@@ -18,7 +18,7 @@ function qsort(arr) {
     else greaterElements.push(arr[i])
   }
 
-  return [...qsort(smallerElements), baseElement, ...qsort(greaterElements)]
+  return [...qsort(smallerElements), ...sameElements, ...qsort(greaterElements)]
 }
 
 const TEST_CASES = [
