@@ -1,5 +1,6 @@
 const { expect } = require('./utils/assert')
 const { isSorted } = require('./utils/isSorted')
+const { haveSameLength } = require('./utils/haveSameLength')
 
 function qsort(arr) {
   if (arr.length < 2) return arr
@@ -33,7 +34,10 @@ const TEST_CASES = [
 ]
 
 for (let testCase of TEST_CASES) {
-  expect(isSorted(qsort(testCase))).toBe(true)
+  const sortedArray = qsort(testCase)
+
+  expect(isSorted(sortedArray)).toBe(true)
+  expect(haveSameLength(sortedArray, testCase)).toBe(true)
 }
 
 module.exports = { qsort }
