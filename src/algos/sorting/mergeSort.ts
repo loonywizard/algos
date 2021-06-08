@@ -1,7 +1,3 @@
-import { haveSameLength, isSorted, expect }  from '../../validators'
-import { generateRandomArray } from '../../utils/generateRandomArray'
-
-
 function mergeSort(arr: number[], shiftIndex = 0): number[] {
   if (arr.length < 2) return arr
 
@@ -26,19 +22,5 @@ function mergeSort(arr: number[], shiftIndex = 0): number[] {
   return arr
 }
 
-
-const TEST_CASES = [
-  generateRandomArray(0, 0, 0),
-  generateRandomArray(1, 1, 5),
-  generateRandomArray(1000, -1000, 1000),
-  generateRandomArray(1001, -1001, 1001),
-]
-
-for (let testCase of TEST_CASES) {
-  const sortedArray = mergeSort(testCase)
-
-  expect(isSorted(sortedArray)).toBe(true)
-  expect(haveSameLength(sortedArray, testCase)).toBe(true)
-}
 
 export { mergeSort }
