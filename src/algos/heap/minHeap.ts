@@ -1,31 +1,9 @@
 import { expect, isMinHeap }  from '../../validators'
+import { BaseHeap } from './heapBaseClass'
 
 // thanks a lot to https://www.youtube.com/watch?v=t0Cq6tVNRBA&ab_channel=HackerRank
 
-class MinHeap {
-  private heap: number[]
-
-  constructor() {
-    this.heap = []
-  }
-
-  private getLeftChildIndex = (parentIndex: number) => 2 * parentIndex + 1
-  private getRightChildIndex = (parentIndex: number) => 2 * parentIndex + 2
-  private getParentIndex = (childIndex: number) => Math.floor((childIndex - 1) / 2)
-
-  private hasLeftChild = (index: number) => this.getLeftChildIndex(index) < this.heap.length
-  private hasRightChild = (index: number) => this.getRightChildIndex(index) < this.heap.length
-  private hasParent = (index: number) => this.getParentIndex(index) >= 0
-
-  private getLeftChild = (index: number) => this.heap[this.getLeftChildIndex(index)]
-  private getRightChild = (index: number) => this.heap[this.getRightChildIndex(index)]
-  private getParent = (index: number) => this.heap[this.getParentIndex(index)]
-
-  private swap(firstIndex: number, secondIndex: number) {
-    [this.heap[firstIndex], this.heap[secondIndex]] = [this.heap[secondIndex], this.heap[firstIndex]]
-  }
-
-
+class MinHeap extends BaseHeap {
   private heapifyDown() {
     let index = 0
 
@@ -76,11 +54,6 @@ class MinHeap {
 
   public getMinElement() {
     return this.heap[0]
-  }
-
-  // for testing
-  public _getAllNodesArray() {
-    return this.heap
   }
 }
 
