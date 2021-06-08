@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest --collectCoverage"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
