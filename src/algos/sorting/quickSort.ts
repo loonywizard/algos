@@ -18,13 +18,15 @@ function partition(arr: number[], start: number, end: number): number {
 }
 
 
-function quickSort(arr: number[], start = 0, end = arr.length - 1) {
-  if (start >= end) return
+function quickSort(arr: number[], start = 0, end = arr.length - 1): number[] {
+  if (start >= end) return arr
 
   const p = partition(arr, start, end)
 
   quickSort(arr, start, p - 1)
   quickSort(arr, p + 1, end)
+
+  return arr
 }
 
 

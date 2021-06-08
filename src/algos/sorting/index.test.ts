@@ -30,7 +30,7 @@ describe('sorting algos', () => {
   test.each(SORTING_ALGOS)('$testName', ({ algo }) => {
     TEST_CASES.forEach((testCaseArray) => {
       const unsortedArrayCopy = [...testCaseArray]
-      const sortedArray = bubbleSort(unsortedArrayCopy)
+      const sortedArray = algo(unsortedArrayCopy)
         
       expect(isSorted(sortedArray)).toBe(true)
       expect(sortedArray).toHaveLength(testCaseArray.length)  
