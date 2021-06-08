@@ -30,13 +30,13 @@ class MinHeap extends BaseHeap {
     }
   }
 
-  public removeMinElement() {
+  public removeMinElement(): number {
     if (this.heap.length === 0) throw new Error('Heap is empty!')
 
     // remove first element
-    const item = this.heap.shift()
+    const item = this.heap.shift() as number
 
-    if (this.heap.length <= 1) return
+    if (this.heap.length <= 1) return item
 
     // insert last element to the beginning
     // FIX ts, IDK why this.heap.pop() could be undefined
