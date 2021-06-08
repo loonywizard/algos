@@ -132,3 +132,5 @@ function test() {
 }
 
 test()
+
+export { MaxHeap }
