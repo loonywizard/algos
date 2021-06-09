@@ -62,12 +62,15 @@ abstract class BaseHeap {
     if (this.isEmpty()) throw new Error('Heap is empty!')
 
     // remove first element
-    const item = this.heap.shift() as number
+    const item = this.heap[0]
 
-    if (this.heap.length <= 1) return item
+    if (this.heap.length <= 2) {
+      this.heap.shift()
+      return item
+    }
 
     // insert last element to the beginning
-    this.heap.unshift(this.heap.pop() as number)
+    this.heap[0] = this.heap.pop() as number
 
     this.heapifyDown()
 
