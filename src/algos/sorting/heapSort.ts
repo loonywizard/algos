@@ -9,7 +9,7 @@ function heapSort(arr: number[]): number[] {
   })
 
   for (let i = arr.length - 1; i >= 0; i--) {
-    arr[i] = heap.removeMaxElement()
+    arr[i] = heap.pop()
   }
 
   return arr

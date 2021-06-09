@@ -32,7 +32,7 @@ class MaxHeap extends BaseHeap {
     this.heapifyUp()
   }
 
-  public removeMaxElement(): number {
+  public pop(): number {
     if (this.heap.length === 0) throw new Error('Heap is empty!')
 
     // remove first element
@@ -82,10 +82,10 @@ function test() {
     heap.insert(7)
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
     
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
     
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
     
     heap.insert(101)
@@ -97,19 +97,19 @@ function test() {
     heap.insert(8)
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
     
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
     
     heap.insert(2)
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 
     heap.insert(73)
@@ -124,10 +124,10 @@ function test() {
     heap.insert(1)
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 
-    heap.removeMaxElement()
+    heap.pop()
     expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
 }
 

@@ -30,7 +30,7 @@ class MinHeap extends BaseHeap {
     }
   }
 
-  public removeMinElement(): number {
+  public pop(): number {
     if (this.heap.length === 0) throw new Error('Heap is empty!')
 
     // remove first element
@@ -89,10 +89,10 @@ function test() {
   heap.insert(7)
   expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
   
-  heap.removeMinElement()
+  heap.pop()
   expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
   
-  heap.removeMinElement()
+  heap.pop()
   expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
   
   heap.insert(101)
@@ -104,7 +104,7 @@ function test() {
   heap.insert(8)
   expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
   
-  heap.removeMinElement()
+  heap.pop()
   expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
   
   heap.insert(2)
@@ -112,3 +112,5 @@ function test() {
 }
 
 test()
+
+export { MinHeap }
