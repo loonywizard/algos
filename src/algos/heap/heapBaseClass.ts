@@ -22,6 +22,10 @@ class BaseHeap {
     [this.heap[firstIndex], this.heap[secondIndex]] = [this.heap[secondIndex], this.heap[firstIndex]]
   }
 
+  public isEmpty() {
+    return this.heap.length === 0
+  }
+
   // for testing
   public _getAllNodesArray() {
     return this.heap
