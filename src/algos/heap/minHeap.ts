@@ -1,4 +1,3 @@
-import { expect, isMinHeap }  from '../../validators'
 import { BaseHeap } from './heapBaseClass'
 
 // thanks a lot to https://www.youtube.com/watch?v=t0Cq6tVNRBA&ab_channel=HackerRank
@@ -57,60 +56,5 @@ class MinHeap extends BaseHeap {
   }
 }
 
-function test() {
-  const heap = new MinHeap()
-
-  // TODO: refactor tests
-
-  heap.insert(2)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(3)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(4)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(15)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(10)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(4)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(6)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(9)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(7)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.pop()
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.pop()
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(101)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(1)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(8)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.pop()
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-  
-  heap.insert(2)
-  expect(isMinHeap(heap._getAllNodesArray())).toBe(true)
-}
-
-test()
 
 export { MinHeap }

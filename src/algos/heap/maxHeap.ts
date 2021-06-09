@@ -1,4 +1,3 @@
-import { expect, isMaxHeap }  from '../../validators'
 import { BaseHeap } from './heapBaseClass'
 
 // thanks a lot to https://github.com/ReginaF2012/JavaScript_MaxHeap/blob/main/maxHeap.js
@@ -50,87 +49,5 @@ class MaxHeap extends BaseHeap {
   }
 }
 
-function test() {
-  const heap = new MaxHeap()
-
-    // TODO: refactor tests
-
-    heap.insert(2)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(3)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(4)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(15)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(10)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(4)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(6)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(9)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(7)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(101)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(1)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(8)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(2)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-
-    heap.insert(73)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(24)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(99)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-    
-    heap.insert(1)
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-
-    heap.pop()
-    expect(isMaxHeap(heap._getAllNodesArray())).toBe(true)
-}
-
-test()
 
 export { MaxHeap }
