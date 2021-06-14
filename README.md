@@ -1,6 +1,6 @@
 # algos
 
-My collection of algorithms written in TypeScript
+My collection of algorithms and data structures written in TypeScript
 
 ## Implemented algorithms
 
@@ -10,11 +10,13 @@ My collection of algorithms written in TypeScript
   - [Insertion Sort](https://github.com/loonywizard/algos/blob/master/src/algos/sorting/insertionSort.ts)
   - [Merge Sort](https://github.com/loonywizard/algos/blob/master/src/algos/sorting/mergeSort.ts)
   - [Quick Sort](https://github.com/loonywizard/algos/blob/master/src/algos/sorting/quickSort.ts)
-- Heap Data Structure
-  - [Max Heap](https://github.com/loonywizard/algos/blob/master/src/algos/heap/maxHeap.ts)
-  - [Min Heap](https://github.com/loonywizard/algos/blob/master/src/algos/heap/minHeap.ts)
   
-
+## Implemented data structures
+- Heap
+  - [Max Heap](https://github.com/loonywizard/algos/blob/master/src/dataStructures/heap/maxHeap.ts)
+  - [Min Heap](https://github.com/loonywizard/algos/blob/master/src/dataStructures/heap/minHeap.ts)
+- Linked List
+  - [Single Linked List](https://github.com/loonywizard/algos/blob/master/src/dataStructures/singleLinkedList/SingleLinkedList.ts)  
 
 ## Running tests
 
