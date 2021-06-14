@@ -1,4 +1,4 @@
-import { MaxHeap } from '../heap/maxHeap'
+import { MaxHeap } from '../../dataStructures/heap/maxHeap'
 
 
 function heapSort(arr: number[]): number[] {
