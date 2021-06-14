@@ -18,14 +18,12 @@ class SingleLinkedList<T> {
     let currentNode = this.head
     let currentIndex = 0
     
-    while (currentIndex < index) {
-        // @ts-ignore: currentNode is not null because we checked length of linked list
+    while (currentIndex < index && currentNode) {
         currentNode = currentNode.next
         currentIndex++
     }
-    
-    // @ts-ignore: currentNode is not null because we checked length of linked list
-    return currentNode.value
+
+    return currentNode === null ? null : currentNode.value
   }
 
   addToHead(value: T): void {
@@ -52,24 +50,23 @@ class SingleLinkedList<T> {
     if (index === 0) return this.addToHead(value)
     if (index < 0) return
     if (index === this.length) return this.addToTail(value)
-    if (index > this.length) return
     
-    // @ts-ignore: this.head is not null if this.length > 0
-    let currentNode = this.head.next
+    const head = this.head as SingleLinkedListNode<T>
+
+    let currentNode = head.next
     let currentIndex = 1
-    let prevNode = this.head
+    let prevNode = head
     
-    while (currentIndex < index) {
+    while (currentIndex < index && currentNode) {
         prevNode = currentNode
-        
-        // @ts-ignore: currentNode is not null because we checked length of linked list
         currentNode = currentNode.next
         currentIndex++
     }
+
+    if (!currentNode) return
     
     const node = new SingleLinkedListNode(value, currentNode)
     
-    // @ts-ignore: prevNode is not null because currentNode in not null
     prevNode.next = node
     
     this.length++
@@ -106,6 +103,7 @@ class SingleLinkedList<T> {
     this.length--
   }
 
+  // methods below are dedicated for testing
   print(): void {
     const items: T[] = []
 
@@ -117,6 +115,31 @@ class SingleLinkedList<T> {
     }
 
     console.log(`${items.join(' -> ')} -> null`)
+  }
+
+  getHeadNode(): SingleLinkedListNode<T> | null {
+    return this.head
+  }
+
+  createCycle(indexFrom: number, indexTo: number) {
+    if (indexFrom < 0 || indexTo < 0) return
+    if (indexFrom < indexTo) return
+
+    let nodeTo = null
+    let currentNode = this.head
+    let currentIndex = 0
+
+    while (currentIndex < indexFrom && currentNode) {
+      if (currentIndex === indexTo) nodeTo = currentNode
+
+      currentNode = currentNode.next
+      currentIndex++
+    }
+
+    if (!currentNode) return
+
+    if (indexFrom === indexTo) currentNode.next = currentNode
+    else currentNode.next = nodeTo
   }
 }
 
