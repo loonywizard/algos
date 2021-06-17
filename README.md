@@ -11,7 +11,8 @@ My collection of algorithms and data structures written in TypeScript
   - [Merge Sort](https://github.com/loonywizard/algos/blob/master/src/algos/sorting/mergeSort.ts)
   - [Quick Sort](https://github.com/loonywizard/algos/blob/master/src/algos/sorting/quickSort.ts)
 - Linked List
-  - [reverse Linked List](https://github.com/loonywizard/algos/blob/master/src/algos/linkedList/reverseLinkedList/index.ts)
+  - [Reverse Linked List](https://github.com/loonywizard/algos/blob/master/src/algos/linkedList/reverseLinkedList/index.ts)
+  - [Remove Linked List Elements](https://github.com/loonywizard/algos/blob/master/src/algos/linkedList/removeLinkedListElements/index.ts)
 
 
 ## Implemented data structures
