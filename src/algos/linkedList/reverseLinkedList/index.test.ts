@@ -1,5 +1,5 @@
 import { SingleLinkedList } from '../../../dataStructures/singleLinkedList/SingleLinkedList'
-import { reverseLinkedList  } from './reverseLinkedList'
+import { reverseLinkedList  } from './index'
 
 
 describe('reverse linked list', () => {
