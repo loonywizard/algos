@@ -5,10 +5,21 @@ class SingleLinkedList<T> {
   tail: SingleLinkedListNode<T> | null
   length: number
 
-  constructor() {
-    this.head = null
+  constructor(head: (SingleLinkedListNode<T> | null) = null) {
+    this.head = head
     this.tail = null
     this.length = 0
+    
+    if (head !== null) {
+      let currentNode = head
+
+      while (currentNode.next) {
+        currentNode = currentNode.next
+        
+        this.tail = currentNode
+        this.length ++
+      }
+    }
   }
 
   get(index: number): T | null {
@@ -115,6 +126,19 @@ class SingleLinkedList<T> {
     }
 
     console.log(`${items.join(' -> ')} -> null`)
+  }
+
+  getElementsArray(): T[] {
+    const items: T[] = []
+
+    let currentNode = this.head
+    
+    while (currentNode !== null) {
+      items.push(currentNode.value)
+      currentNode = currentNode.next
+    }
+
+    return items
   }
 
   getHeadNode(): SingleLinkedListNode<T> | null {
