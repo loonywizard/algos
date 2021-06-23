@@ -1,9 +1,11 @@
 import { naiveStringMatcher } from './naiveStringMatching'
+import { kmpStringMatcher } from './kmp'
 
 
 
 const ALGOS = [
-  { algo: naiveStringMatcher, algoName: 'Naive String Matching' },
+  { algo: naiveStringMatcher, algoName: 'Naive Algorithm' },
+  { algo: kmpStringMatcher, algoName: 'Knuth-Morris-Pratt Algorithm' }
 ]
 
 describe.each(ALGOS)('String Matching $algoName', ({ algo }) => {
