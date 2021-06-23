@@ -12,6 +12,7 @@ My collection of algorithms and data structures written in TypeScript
   - [Quick Sort](https://github.com/loonywizard/algos/blob/master/src/algos/sorting/quickSort.ts)
 - String Matching
   - [Naive String Matching](https://github.com/loonywizard/algos/blob/master/src/algos/stringMatching/naiveStringMatching.ts)
+  - [Knuth-Morris-Pratt (KMP) String Matching](https://github.com/loonywizard/algos/blob/master/src/algos/stringMatching/kmp.ts)
 - Linked List
   - [Reverse Linked List](https://github.com/loonywizard/algos/blob/master/src/algos/linkedList/reverseLinkedList/index.ts)
   - [Remove Linked List Elements](https://github.com/loonywizard/algos/blob/master/src/algos/linkedList/removeLinkedListElements/index.ts)
